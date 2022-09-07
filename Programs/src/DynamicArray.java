@@ -72,15 +72,23 @@ public class DynamicArray {
             --currentLength;
         }
     }
+
+    public void replace(String string, int index)
+    {
+        if(index > -1 && index < currentLength)
+        array[index] = string;
+        else
+            System.out.println("Index out of bound");
+    }
     public static void main(String[] args){
         DynamicArray dynamicarray = new DynamicArray();
-
         dynamicarray.push("apple");
         dynamicarray.push("mango");
         dynamicarray.push("banana");
         System.out.println(dynamicarray.length());
         System.out.println(dynamicarray.get(0));
         dynamicarray.pop();
+        dynamicarray.replace("coconut",0);
         System.out.println(dynamicarray.length());
         dynamicarray.delete(1);
         System.out.println(dynamicarray.get(1));
